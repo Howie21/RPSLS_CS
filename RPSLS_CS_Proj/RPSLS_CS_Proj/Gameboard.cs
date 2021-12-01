@@ -13,13 +13,13 @@ namespace RPSLS_CS_Proj
     public class Gameboard
     {
 
-        public int roundCount;
         public List<Player> players;
+        public List<AI> ai;
 
-        public Gameboard(int roundCount) 
+        public Gameboard() 
         { 
-            this.roundCount = roundCount;
             this.players = new List<Player>();
+            this.ai = new List<AI>();
             Console.WriteLine("Gameboard Created");
         }
 
@@ -95,7 +95,7 @@ namespace RPSLS_CS_Proj
                        return verification;
                 }
 
-        public string getPlayerGesture(Player player)
+        public string getPlayerGesture()
         {
             bool verify = false;
             string gesture = "";
@@ -119,7 +119,7 @@ namespace RPSLS_CS_Proj
                 Human player1 = new Human(name, 0);
                 this.players.Add(player1);
                 AI player2 = new AI("Nevin", 0);
-                this.players.Add(player2);
+                this.ai.Add(player2);
             }
             else
             {
@@ -217,6 +217,21 @@ namespace RPSLS_CS_Proj
                 Console.WriteLine("{0} choose your gesture", players2.name);
                 string player2Input = getPlayerGesture(players2);
                 int winner = chooseWinner(player1Input, player2Input);
+                if(winner == 1)
+                {
+                    players1.score++;
+                    Console.WriteLine("{0} won that round!", players1.name);
+                }
+                else if(winner == 2)
+                {
+                    players2.score++;
+                    Console.WriteLine("{0} won that round!", players2.name);
+                }
+                else
+                {
+                    Console.WriteLine("Oh no, something went wrong.");
+                    playerVsPlayer();
+                }
             }
             while (players1.score < 3 && players2.score < 3);
            
@@ -224,6 +239,35 @@ namespace RPSLS_CS_Proj
 
         public void playerVsAI()
         {
+            Player player1 = this.players[0];
+            AI ai = this.ai[0];
+
+            Console.WriteLine("This is a first to 3 game of RPSLS, once you or the AI reach 3, the game will end. ");
+            do
+            {
+                Console.WriteLine("Gestures to choose from are:");
+                Console.WriteLine("Rock, Paper, Scissors, Lizard and Spock\n");
+                Console.WriteLine("{0} choose your gesture", player1.name);
+                string player1Input = getPlayerGesture();
+                string aiInput = ai.randomGesture();
+                int winner = chooseWinner(player1Input, aiInput);
+                if (winner == 1)
+                {
+                    player1.score++;
+                    Console.WriteLine("{0} won that round!", player1.name);
+                }
+                else if (winner == 2)
+                {
+                    ai.score++;
+                    Console.WriteLine("{0} won that round!", ai.name);
+                }
+                else
+                {
+                    Console.WriteLine("Oh no, something went wrong.");
+                    playerVsPlayer();
+                }
+            }
+            while (ai.score < 3 && player1.score < 3);
 
         }
 
