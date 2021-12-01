@@ -27,15 +27,28 @@ namespace RPSLS_CS_Proj
             Console.WriteLine("Starting Game...");
             int numberOfPlayers = decidePlayers();
             createPlayers(numberOfPlayers);
-
+            if(numberOfPlayers == 1)
+            {
+                playerVsAI();
+            }
+            else
+            {
+                playerVsPlayer();
+            }
 
         }
 
         public int decidePlayers()
         {
-            Console.WriteLine("Enter Number of Human Players: (no more then 2)");
-            string players = Console.ReadLine();
-            int numberOfPlayers = Convert.ToInt32(players);
+            int numberOfPlayers = 0;
+            do
+            {
+                Console.WriteLine("Enter Number of Human Players: (no more then 2)");
+                string players = Console.ReadLine();
+                numberOfPlayers = Convert.ToInt32(players);
+            }
+            while(numberOfPlayers == 0 || numberOfPlayers > 2);
+            
 
             return numberOfPlayers;
         }
@@ -142,6 +155,25 @@ namespace RPSLS_CS_Proj
             return winner;
         }
 
+        public void playerVsPlayer()
+        {
+            object players1 = this.players[0];
+            object players2 = this.players[1];
+
+
+            Console.WriteLine("This is a first to 3 match. Once someone reaches 3, that player will be the winner. ");
+            do
+            {
+
+            }
+            while (players1.score < 3);
+           
+        }
+
+        public void playerVsAI()
+        {
+
+        }
 
     }
 }
