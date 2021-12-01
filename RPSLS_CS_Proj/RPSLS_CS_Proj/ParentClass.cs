@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS_CS_Proj
 {
-    public abstract class ParentClass
+    public abstract class Player
     {
         public string name;
         public int score;
