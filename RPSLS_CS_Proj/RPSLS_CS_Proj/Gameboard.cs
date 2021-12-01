@@ -26,6 +26,7 @@ namespace RPSLS_CS_Proj
         {
             Console.WriteLine("Starting Game...");
             int numberOfPlayers = decidePlayers();
+            createPlayers(numberOfPlayers);
 
 
         }
@@ -52,8 +53,23 @@ namespace RPSLS_CS_Proj
                 string name = getPlayerName();
                 Human player1 = new Human(name, 0);
                 this.players.Add(player1);
+                AI aiPlayer = new AI("Nevin", 0);
+                this.players.Add(aiPlayer);
+            }
+            else
+            {
+                for(int i = 0; i < humanPlayers; i++)
+                {
+                    string name = getPlayerName();
+                    Human player = new Human(name, 0);
+                    this.players[i] = player;
+                    Console.WriteLine("{0} was created as a Human Player", player.name);
+                }
             }
         }
+
+
+
 
     }
 }
