@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using static System.Convert;
 using static RPSLS_CS_Proj.Human;
 using static RPSLS_CS_Proj.AI;
+using static RPSLS_CS_Proj.Player
 
 namespace RPSLS_CS_Proj
 {
@@ -13,12 +14,12 @@ namespace RPSLS_CS_Proj
     {
 
         public int roundCount;
-        public List<object> players;
+        public List<Player> players;
 
         public Gameboard(int roundCount) 
         { 
             this.roundCount = roundCount;
-            this.players = new List<object>();
+            this.players = new List<Player>();
             Console.WriteLine("Gameboard Created");
         }
 
@@ -63,6 +64,51 @@ namespace RPSLS_CS_Proj
             }
             while (userInput == "");
             return userInput;
+        }
+
+        public bool verifyInput(string userInput)
+                {
+                       bool verification;
+
+                       switch (userInput)
+                       {
+                           case "rock":
+                               verification = true; 
+                               break;
+                           case "paper":
+                               verification = true;
+                               break;
+                           case "scissors":
+                               verification= true;
+                               break;
+                           case "lizard":
+                               verification = true;
+                               break;
+                           case "spock":
+                               verification = true;
+                               break;
+                           default:
+                               verification = false;
+                               break;
+                       }
+
+                       return verification;
+                }
+
+        public string getPlayerGesture(Player player)
+        {
+            bool verify = false;
+            string gesture = "";
+            do
+            {
+                string input = Console.ReadLine();
+                gesture = input.ToLower();
+                verify = verifyInput(gesture);
+            }
+            while (verify == false || gesture == "");
+            
+            return gesture;
+
         }
 
         public void createPlayers(int humanPlayers)
@@ -157,16 +203,22 @@ namespace RPSLS_CS_Proj
 
         public void playerVsPlayer()
         {
-            object players1 = this.players[0];
-            object players2 = this.players[1];
+            Player players1 = this.players[0];
+            Player players2 = this.players[1];
 
 
             Console.WriteLine("This is a first to 3 match. Once someone reaches 3, that player will be the winner. ");
             do
             {
-
+                Console.WriteLine("Gestures to choose from are:");
+                Console.WriteLine("Rock, Paper, Scissors, Lizard and Spock\n");
+                Console.WriteLine("{0} choose your gesture", players1.name);
+                string player1Input = getPlayerGesture(players1);
+                Console.WriteLine("{0} choose your gesture", players2.name);
+                string player2Input = getPlayerGesture(players2);
+                int winner = chooseWinner(player1Input, player2Input);
             }
-            while (players1.score < 3);
+            while (players1.score < 3 && players2.score < 3);
            
         }
 
