@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using static System.Convert;
 using static RPSLS_CS_Proj.Human;
 using static RPSLS_CS_Proj.AI;
-using static RPSLS_CS_Proj.Player
+using static RPSLS_CS_Proj.Player;
 
 namespace RPSLS_CS_Proj
 {
@@ -127,7 +127,7 @@ namespace RPSLS_CS_Proj
                 {
                     string name = getPlayerName();
                     Human player = new Human(name, 0);
-                    this.players[i] = player;
+                    this.players.Add(player);
                     Console.WriteLine("{0} was created as a Human Player", player.name);
                 }
             }
@@ -213,19 +213,19 @@ namespace RPSLS_CS_Proj
                 Console.WriteLine("Gestures to choose from are:");
                 Console.WriteLine("Rock, Paper, Scissors, Lizard and Spock\n");
                 Console.WriteLine("{0} choose your gesture", players1.name);
-                string player1Input = getPlayerGesture(players1);
+                string player1Input = getPlayerGesture();
                 Console.WriteLine("{0} choose your gesture", players2.name);
-                string player2Input = getPlayerGesture(players2);
+                string player2Input = getPlayerGesture();
                 int winner = chooseWinner(player1Input, player2Input);
                 if(winner == 1)
                 {
                     players1.score++;
-                    Console.WriteLine("{0} won that round!", players1.name);
+                    Console.WriteLine("\n{0} won that round!\n", players1.name);
                 }
                 else if(winner == 2)
                 {
                     players2.score++;
-                    Console.WriteLine("{0} won that round!", players2.name);
+                    Console.WriteLine("\n{0} won that round!\n", players2.name);
                 }
                 else
                 {
@@ -234,6 +234,14 @@ namespace RPSLS_CS_Proj
                 }
             }
             while (players1.score < 3 && players2.score < 3);
+            if(players1.score == 3)
+            {
+                announceHumanWinner(players1);
+            }
+            else
+            {
+                announceHumanWinner(players2);
+            }
            
         }
 
@@ -254,12 +262,12 @@ namespace RPSLS_CS_Proj
                 if (winner == 1)
                 {
                     player1.score++;
-                    Console.WriteLine("{0} won that round!", player1.name);
+                    Console.WriteLine("\n{0} won that round!\n", player1.name);
                 }
                 else if (winner == 2)
                 {
                     ai.score++;
-                    Console.WriteLine("{0} won that round!", ai.name);
+                    Console.WriteLine("\n{0} won that round!\n", ai.name);
                 }
                 else
                 {
@@ -268,8 +276,28 @@ namespace RPSLS_CS_Proj
                 }
             }
             while (ai.score < 3 && player1.score < 3);
+            if(ai.score == 3)
+            {
+                announceAIWinner(ai);
+            }
+            else
+            {
+                announceHumanWinner(player1);
+            }
 
         }
 
+        public void announceHumanWinner(Player player)
+        {
+            Console.WriteLine("{0} won the game, congrats. Hope to see you again soon!", player.name);
+        }
+
+        public void announceAIWinner(AI ai)
+        {
+            Console.WriteLine("Ouch, AI {0} won the game! I'm sure you'll beat him next game!", ai.name);
+        }
+
+
     }
 }
+

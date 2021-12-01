@@ -1,0 +1,15 @@
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\obj\Debug\net6.0\RPSLS_CS_Proj.csproj.AssemblyReference.cache
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\obj\Debug\net6.0\RPSLS_CS_Proj.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\obj\Debug\net6.0\RPSLS_CS_Proj.AssemblyInfoInputs.cache
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\obj\Debug\net6.0\RPSLS_CS_Proj.AssemblyInfo.cs
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\obj\Debug\net6.0\RPSLS_CS_Proj.csproj.CoreCompileInputs.cache
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\bin\Debug\net6.0\RPSLS_CS_Proj.exe
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\bin\Debug\net6.0\RPSLS_CS_Proj.deps.json
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\bin\Debug\net6.0\RPSLS_CS_Proj.runtimeconfig.json
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\bin\Debug\net6.0\RPSLS_CS_Proj.dll
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\bin\Debug\net6.0\ref\RPSLS_CS_Proj.dll
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\bin\Debug\net6.0\RPSLS_CS_Proj.pdb
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\obj\Debug\net6.0\RPSLS_CS_Proj.dll
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\obj\Debug\net6.0\ref\RPSLS_CS_Proj.dll
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\obj\Debug\net6.0\RPSLS_CS_Proj.pdb
+D:\Projects\RPSLS_CS\RPSLS_CS\RPSLS_CS_Proj\RPSLS_CS_Proj\obj\Debug\net6.0\RPSLS_CS_Proj.genruntimeconfig.cache
