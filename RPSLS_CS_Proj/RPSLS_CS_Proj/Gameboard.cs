@@ -33,7 +33,7 @@ namespace RPSLS_CS_Proj
 
         public int decidePlayers()
         {
-            Console.WriteLine("Enter Number of Human Players:");
+            Console.WriteLine("Enter Number of Human Players: (no more then 2)");
             string players = Console.ReadLine();
             int numberOfPlayers = Convert.ToInt32(players);
 
@@ -43,7 +43,13 @@ namespace RPSLS_CS_Proj
         public string getPlayerName()
         {
             Console.WriteLine("Please Enter the Players name!:");
-            return Console.ReadLine();
+            string userInput = "";
+            do
+            {
+               userInput = Console.ReadLine();
+            }
+            while (userInput == "");
+            return userInput;
         }
 
         public void createPlayers(int humanPlayers)
@@ -53,8 +59,8 @@ namespace RPSLS_CS_Proj
                 string name = getPlayerName();
                 Human player1 = new Human(name, 0);
                 this.players.Add(player1);
-                AI aiPlayer = new AI("Nevin", 0);
-                this.players.Add(aiPlayer);
+                AI player2 = new AI("Nevin", 0);
+                this.players.Add(player2);
             }
             else
             {
@@ -68,7 +74,17 @@ namespace RPSLS_CS_Proj
             }
         }
 
+        public int chooseWinner(string player1Gesture, string player2Gesture)
+        {
+            int winner = 0;
 
+            if (player1Gesture == "rock")
+            {
+
+            }
+
+
+        }
 
 
     }

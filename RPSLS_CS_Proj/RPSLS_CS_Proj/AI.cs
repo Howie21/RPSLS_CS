@@ -32,6 +32,7 @@ namespace RPSLS_CS_Proj
         {
             Random rnd = new Random();
             int index = rnd.Next(5);
+            Console.WriteLine(this.gestures[index]);
             return this.gestures[index];
         }
 
