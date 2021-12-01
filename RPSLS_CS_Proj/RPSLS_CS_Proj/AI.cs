@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS_CS_Proj
 {
-    public class AI : ParentClass
+    public class AI : Player
     {
         public List<string> gestures;
 
