@@ -80,10 +80,66 @@ namespace RPSLS_CS_Proj
 
             if (player1Gesture == "rock")
             {
-
+                if(player2Gesture == "scissors")
+                {
+                    winner = 1;
+                }
+                else if(player2Gesture== "lizard")
+                {
+                    winner = 1;
+                }
+                else { winner = 2; }
+            }
+            else if( player1Gesture == "scissors")
+            {
+                if( player2Gesture == "paper")
+                {
+                    winner = 1;
+                }
+                else if(player2Gesture == "lizard")
+                {
+                    winner =1;
+                }
+                else { winner = 2; }
+            }
+            else if(player1Gesture == "paper")
+            {
+                if(player2Gesture == "rock")
+                {
+                    winner =1;
+                }
+                else if( player2Gesture == "spock")
+                {
+                    winner = 1;
+                }
+                else { winner = 2; }
+            }
+            else if(player1Gesture == "lizard")
+            {
+                if(player2Gesture == "spock")
+                {
+                    winner = 1;
+                }
+                else if(player2Gesture == "paper")
+                {
+                    winner = 1;
+                }
+                else { winner = 2; }
+            }
+            else if(player1Gesture == "spock")
+            {
+                if(player2Gesture == "rock")
+                {
+                    winner = 1;
+                }
+                else if(player2Gesture == "scissors")
+                {
+                    winner = 1;
+                }
+                else { winner = 2; }
             }
 
-
+            return winner;
         }
 
 
